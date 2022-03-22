@@ -26,6 +26,6 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use('/user', userRoutes)
 
-app.listen(PORT, function () {
-  console.log('saver is running on :', PORT)
+app.listen(process.env.PORT||PORT, function () {
+  console.log('saver is running')
 })
