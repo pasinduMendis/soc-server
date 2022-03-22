@@ -27,5 +27,5 @@ app.use(cors())
 app.use('/user', userRoutes)
 
 app.listen(process.env.PORT||PORT, function () {
-  console.log('saver is running')
+  console.log('saver is running : '+ process.env.PORT)
 })
