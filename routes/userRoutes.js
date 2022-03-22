@@ -4,6 +4,11 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/userModel')
 
+userRoutes.get('/', async (req, res) => {
+  console.log("abc")
+  res.send("done")
+})
+
 userRoutes.post('/add', async (req, res) => {
   const user = new User(req.body)
   const check = await User.findOne({ email: user.email })
