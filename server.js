@@ -24,7 +24,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(cors())
+app.get('/', (req,res)=>{
+  res.send("welcome to soc project")
+})
 app.use('/user', userRoutes)
+
 
 app.listen(process.env.PORT||PORT, function () {
   console.log('saver is running : '+ process.env.PORT)
