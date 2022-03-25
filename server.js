@@ -31,5 +31,5 @@ app.use('/user', userRoutes)
 
 
 app.listen(process.env.PORT||PORT, function () {
-  console.log('saver is running : '+ process.env.PORT)
+  console.log('saver is running : '+ PORT)
 })

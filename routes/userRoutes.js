@@ -55,4 +55,16 @@ userRoutes.get('/check2/:email', async (req, res) => {
   res.send(findId)
 })
 
+userRoutes.put('/update/:email', async (req, res) => {
+  const salt = await bcrypt.genSalt(10)
+    const pass = await bcrypt.hash(req.body.password, salt)
+    const password={password:pass} 
+/*     console.log(req.body) */
+  const updateId = await Admin.updateOne(
+    { email: req.params.email },
+    { $set: password }
+  )
+  res.send(updateId?'success':'failed')
+})
+
 module.exports = userRoutes
