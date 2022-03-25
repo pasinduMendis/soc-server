@@ -60,7 +60,7 @@ userRoutes.put('/update/:email', async (req, res) => {
     const pass = await bcrypt.hash(req.body.password, salt)
     const password={password:pass} 
 /*     console.log(req.body) */
-  const updateId = await Admin.updateOne(
+  const updateId = await User.updateOne(
     { email: req.params.email },
     { $set: password }
   )
