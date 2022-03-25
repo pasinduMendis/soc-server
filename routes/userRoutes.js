@@ -48,7 +48,7 @@ userRoutes.get('/check/:email/:password', async (req, res) => {
 
 userRoutes.get('/check2/:email', async (req, res) => {
   const findId = await User.findOne({
-    company_email: req.params.email,
+    email: req.params.email,
     //admin_password: req.params.password,
   })
 
