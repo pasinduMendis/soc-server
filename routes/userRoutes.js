@@ -67,4 +67,9 @@ userRoutes.put('/update/:email', async (req, res) => {
   res.send(updateId?'success':'failed')
 })
 
+userRoutes.post('/getData', async (req, res) => {
+  var decoded = jwt.verify(req.body.token, "Abcd!23234");
+  res.send(decode)
+})
+
 module.exports = userRoutes
